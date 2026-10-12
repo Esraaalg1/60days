@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحدي القوة والأنوثة - جدول 5 أيام</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff69b4;
+            --secondary-color: #ffb6c1;
+            --accent-color: #fff0f5;
+            --text-color: #4a4a4a;
+            --dark-color: #333333;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: #fff5f8;
+            color: var(--text-color);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.15);
+            overflow: hidden;
+            border: 2px solid var(--secondary-color);
+        }
+
+        header {
+            background: linear-gradient(135deg, #ffb6c1, #ff69b4);
+            color: var(--white);
+            padding: 25px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 14px;
+            opacity: 0.95;
+        }
+
+        .user-info {
+            background-color: var(--accent-color);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            border-bottom: 1px solid var(--secondary-color);
+            font-size: 13px;
+            font-weight: 700;
+            color: #b04173;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .day-card {
+            background: var(--white);
+            border: 1.5px solid #ffccd5;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .day-card:hover {
+            box-shadow: 0 5px 15px rgba(255, 182, 193, 0.4);
+        }
+
+        .day-header {
+            background-color: #ffe6eb;
+            padding: 12px 15px;
+            font-weight: 700;
+            color: #d87093;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .day-body {
+            padding: 15px;
+            display: none;
+            background-color: var(--white);
+        }
+
+        .day-card.active .day-body {
+            display: block;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #fce4ec;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        ul li:last-child {
+            border-bottom: none;
+        }
+
+        .exercise-name {
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+
+        .exercise-sets {
+            color: #d87093;
+            font-size: 13px;
+        }
+
+        .rest-day {
+            text-align: center;
+            color: #888;
+            font-style: italic;
+            padding: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 15px;
+            font-size: 12px;
+            color: #aaa;
+            background-color: #fff8fa;
+            border-top: 1px solid #ffe6eb;
+        }
+
+        /* زر تفاعلي لفتح وإغلاق الأيام */
+        .toggle-icon {
+            font-size: 16px;
+            transition: transform 0.3s;
+        }
+        .day-card.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>🌸 تحدي القوة والأنوثة 🌸</h1>
+            <p>جدول تمارين حديد (5 أيام أسبوعياً) لخسارة الدهون وزيادة القوة</p>
+        </header>
+
+        <div class="user-info">
+            <div>الطول: 158 سم</div>
+            <div>الوزن: 58 كغ</div>
+            <div>العمر: 26 سنة</div>
+        </div>
+
+        <div class="content">
+
+            <!-- اليوم الأول -->
+            <div class="day-card active">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <span>💖 اليوم الأول: أرجل أمامية (Legs - Quad)</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="day-body">
+                    <ul>
+                        <li><span class="exercise-name">جهاز دبرس (Leg Press)</span><span class="exercise-sets">3 جولات × 12 تكرار</span></li>
+                        <li><span class="exercise-name">سكوات بالدمبل (Goblet Squat)</span><span class="exercise-sets">4 جولات × 10 تكرارات</span></li>
+                        <li><span class="exercise-name">امتداد الركبة للأمام (Leg Extension)</span><span class="exercise-sets">3 جولات × 12 تكرار</span></li>
+                        <li><span class="exercise-name">طعانب بالدمبل (Lunges)</span><span class="exercise-sets">3 جولات × 10 تكرارات</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- اليوم الثاني -->
+            <div class="day-card">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <span>💖 اليوم الثاني: علوي (ظهر وبايسبس + بطن)</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="day-body">
+                    <ul>
+                        <li><span class="exercise-name">سحب أرضي جهاز (Seated Cable Row)</span><span class="exercise-sets">3 جولات × 12 تكرار</span></li>
+                        <li><span class="exercise-name">سحب علوي واسع (Lat Pulldown)</span><span class="exercise-sets">3 جولات × 10 تكرارات</span></li>
+                        <li><span class="exercise-name">بايسبس بالدمبل (Bicep Curls)</span><span class="exercise-sets">3 جولات × 12 تكرار</span></li>
+                        <li><span class="exercise-name">تمرين البلانك (Plank)</span><span class="exercise-sets">3 جولات × 45 ثانية</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- اليوم الثالث -->
+            <div class="day-card">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <span>🌸 اليوم الثالث: راحة واستشفاء</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="day-body">
+                    <p class="rest-day">يوم راحة تام لاستشفاء العضلات، شرب الماء بانتظام والاسترخاء 🧘‍♀️</p>
+                </div>
+            </div>
+
+            <!-- اليوم الرابع -->
+            <div class="day-card">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <span>💖 اليوم الرابع: أرجل خلفية ومؤخرة (Glutes)</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="day-body">
+                    <ul>
+                        <li><span class="exercise-name">رفعة رومانية (Romanian Deadlift)</span><span class="exercise-sets">4 جولات × 10 تكرارات</span></li>
+                        <li><span class="exercise-name">جسر الحوض للوزن (Hip Thrust)</span><span class="exercise-sets">4 جولات × 12 تكرار</span></li>
+                        <li><span class="exercise-name">جهاز ثني الركبة للخلف (Leg Curl)</span><span class="exercise-sets">3 جولات × 12 تكرار</span></li>
+                        <li><span class="exercise-name">مشي أمامي منخفض (Walking Squat)</span><span class="exercise-sets">3 جولات</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- اليوم الخامس -->
+            <div class="day-card">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <span>💖 اليوم الخامس: علوي (أكتاف وترايسبس)</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="day-body">
+                    <ul>
+                        <li><span class="exercise-name">ضغط أكتاف دمبل (Shoulder Press)</span><span class="exercise-sets">3 جولات × 10 تكرارات</span></li>
+                        <li><span class="exercise-name">رفرف جانبي للأكتاف (Lateral Raises)</span><span class="exercise-sets">4 جولات × 12 تكرار</span></li>
+                        <li><span class="exercise-name">ترايسبس بالحبل (Tricep Pushdown)</span><span class="exercise-sets">3 جولات × 12 تكرار</span></li>
+                        <li><span class="exercise-name">تمارين أسفل البطن (Leg Raises)</span><span class="exercise-sets">3 جولات × 12 تكرار</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- اليوم السادس -->
+            <div class="day-card">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <span>💖 اليوم السادس: مقاومة شاملة + كارديو</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="day-body">
+                    <ul>
+                        <li><span class="exercise-name">كتل بيل سوينغ (Kettlebell Swings)</span><span class="exercise-sets">3 جولات × 15 تكرار</span></li>
+                        <li><span class="exercise-name">ضغط صدر مائل (Incline DB Press)</span><span class="exercise-sets">3 جولات × 10 تكرارات</span></li>
+                        <li><span class="exercise-name">كارديو حارق (Stairmaster / Treadmill)</span><span class="exercise-sets">15-20 دقيقة</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- اليوم السابع -->
+            <div class="day-card">
+                <div class="day-header" onclick="toggleDay(this)">
+                    <span>🌸 اليوم السابع: راحة تامة</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="day-body">
+                    <p class="rest-day">استمتعي بيومكِ، واستعدي لأسبوع جديد مليء بالقوة ✨</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            تصميم خاص لتحقيق هدفكِ بكل أنوثة وقوة 💪💖
+        </div>
+    </div>
+
+    <script>
+        function toggleDay(header) {
+            const card = header.parentElement;
+            card.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
